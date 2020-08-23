@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cows and Bulls</title>
+	<script type="text/javascript">
+		function cowbull(){
+			var x,y,z,a,b,c,cow,bull,t;
+			x = Math.floor(Math.random()*10);
+			while(x==0)
+				 x = Math.floor(Math.random()*10);
+			y = Math.floor(Math.random()*10);
+			while((x==y)||(y==0))
+			{
+				y = Math.floor(Math.random()*10);
+			}
+			z = Math.floor(Math.random()*10);
+			while((z==x)||(z==y)||(z==0))
+			{
+				z = Math.floor(Math.random()*10);
+			}
+			alert("Hello");
+			while(1)
+			{
+				cow = 0;
+				bull = 0;
+				n = prompt("Enter the number here....");
+				t = n;
+				c = n%10;
+				n = Math.floor(n/10);
+				b = n%10;
+				n = Math.floor(n/10);
+				a = n;
+				if((a==y)||(a==z))
+					cow++;
+				if((b==x)||(b==z))
+					cow++;
+				if((c==x)||(c==y))
+					cow++;
+				if(a==x)
+					bull++;
+				if(b==y)
+					bull++;
+				if(c==z)
+					bull++;
+				if(bull==3)
+				{
+					alert('Congtratulations !! '+t+' is the correct one.');
+					break;
+				}
+				alert(cow+" Cows "+bull+" Bulls");
+			}
+		}
+	</script>
+	<style type="text/css">
+		h1{
+			color: #FFFFFF;
+			background-image : linear-gradient(rgb(0,110,0),rgb(0,0,0));
+			text-align: center;
+			margin : 2%;
+			padding: 10%
+		}
+		summary{
+			border: solid 2px rgb(0,110,0);
+			border-left: none;
+			border-right: none;
+			background-color: #FFFFFF;
+			padding: 0.5%;
+			padding-bottom: 0; 
+			text-align: left;
+			color: rgb(0,110,0);
+		}
+		details{
+			border: solid 2px rgb(0,110,0);
+			border-right: none;
+			border-left: none;
+			border-top: none;
+			margin: 2%;
+			background-image : linear-gradient(rgb(0,110,0),rgb(0,0,0));
+			color: #FFFFFF;
+			text-align: left;
+		}
+		button{
+			background-image : linear-gradient(rgb(0,110,0),rgb(0,0,0));
+			color: #FFFFFF;
+			margin-top: 2%;
+			margin-left: 45%;
+			padding: 1%;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Cows and Bulls</h1>
+	</header>
+	<main>
+		<details>
+			<summary><h2>Instructions</h2></summary>
+			<ul>
+				<li>You have to guess the three digit number in which each digit is distinct.</li>
+				<li>Based on your guess you get the number of cows and bulls.
+					<ol>
+						<li>If there is a common digit and not in the correct position, then you get one cow.</li>
+						<li>If there is a common digit and in the correct position, then you get one bull.</li>
+					</ol>
+				</li>
+				<li>Start guessing by clicking on "Guess me !!".</li>
+				<li>Guess the correct number to get three bulls and win !</li>
+			</ul>
+		</details>
+		<button onclick = cowbull()><h2>Guess me !!</h2></button>
+	</main>
+</body>
